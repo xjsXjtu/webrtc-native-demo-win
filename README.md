@@ -8,4 +8,4 @@ But sometimes people wants to make use of WebRTC native api to set up a video/au
 There are two native demo in the WebRTC source code: peerconnection_client for Windows, AppRTCMobile for Android/iOS. 
 But it's not simple enough to show how to use WebRTC video/audio engine API, because both demo set up based on libjingle_peerconnection API, not rtc_media.
 Take peerconnection_client as example:
-![webrtc-projects-dependency][webrtc-projects-dependency.png]
+![webrtc-projects-dependency](/webrtc-projects-dependency.png)
