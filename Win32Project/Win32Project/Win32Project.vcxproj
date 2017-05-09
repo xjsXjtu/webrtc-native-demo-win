@@ -42,7 +42,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -99,15 +99,15 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;V8_DEPRECATION_WARNINGS;USE_AURA=1;NO_TCMALLOC;FULL_SAFE_BROWSING;SAFE_BROWSING_CSD;SAFE_BROWSING_DB_LOCAL;CHROMIUM_BUILD;ENABLE_MEDIA_ROUTER=1;FIELDTRIAL_TESTING_ENABLED;COMPONENT_BUILD;__STD_C;_CRT_RAND_S;_CRT_SECURE_NO_DEPRECATE;_HAS_EXCEPTIONS=0;_SCL_SECURE_NO_DEPRECATE;_ATL_NO_OPENGL;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;PSAPI_VERSION=1;_SECURE_ATL;_USING_V110_SDK71_;NOMINMAX;NTDDI_VERSION=0x0A000000;_WIN32_WINNT=0x0A00;WINVER=0x0A00;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;EXPAT_RELATIVE_PATH;HAVE_SCTP;WEBRTC_WIN;_CRT_SECURE_NO_WARNINGS;HAVE_SRTP;HAVE_WEBRTC_VIDEO;HAVE_WEBRTC_VOICE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Users\xiongjs\gerrit\webrtc-native-demo-win\Win32Project\webrtc-headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\xiongjs\gerrit\webrtc-native-demo-win\Win32Project\Win32Project;C:\Users\xiongjs\gerrit\webrtc-native-demo-win\Win32Project\webrtc-headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Users\xiongjs\gerrit\webrtc-native-demo-win\Win32Project\webrtc-static-lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>advapi32.lib;comdlg32.lib;dbghelp.lib;delayimp.lib;dnsapi.lib;gdi32.lib;kernel32.lib;msimg32.lib;odbc32.lib;odbccp32.lib;ole32.lib;oleaut32.lib;psapi.lib;shell32.lib;shlwapi.lib;user32.lib;usp10.lib;uuid.lib;version.lib;wininet.lib;winmm.lib;winspool.lib;ws2_32.lib;crypt32.lib;iphlpapi.lib;secur32.lib;Strmiids.lib;dmoguids.lib;wmcodecdspuuid.lib;amstrmid.lib;msdmo.lib;video_capture_module.lib;ana_config_proto.lib;ana_debug_dump_proto.lib;audio.lib;audio_coder.lib;audio_coding.lib;audio_conference_mixer.lib;audio_decoder_interface.lib;audio_device.lib;audio_encoder_interface.lib;audio_format.lib;audio_format_conversion.lib;audio_frame_manipulator.lib;audio_frame_operations.lib;audio_mixer_impl.lib;audio_network_adaptor.lib;audio_processing.lib;audio_processing_sse2.lib;audioproc_debug_proto.lib;bitrate_controller.lib;boringssl.dll.lib;boringssl_asm.lib;builtin_audio_decoder_factory.lib;call.lib;cng.lib;command_line_parser.lib;common_audio.lib;common_audio_sse2.lib;common_video.lib;congestion_controller.lib;dl.lib;expat.lib;field_trial_default.lib;file_player.lib;file_recorder.lib;g711.lib;g722.lib;ilbc.lib;isac.lib;isac_c.lib;isac_common.lib;isac_fix.lib;level_indicator.lib;libjingle_peerconnection.lib;libjingle_peerconnection_api.lib;libjpeg.lib;libsrtp.lib;libstunprober.lib;libvpx.lib;libvpx_yasm.lib;libyuv.lib;media_file.lib;metrics_default.lib;neteq.lib;opus.lib;pacing.lib;pcm16b.lib;protobuf_full.lib;protobuf_lite.dll.lib;protoc_lib.lib;red.lib;remote_bitrate_estimator.lib;rent_a_codec.lib;rtc_base.lib;rtc_base_approved.lib;rtc_event_log_impl.lib;rtc_event_log_proto.lib;rtc_media.lib;rtc_media_base.lib;rtc_numerics.lib;rtc_p2p.lib;rtc_pc.lib;rtc_stats.lib;rtc_task_queue.lib;rtp_rtcp.lib;simd.lib;simd_asm.lib;system_wrappers.lib;usrsctp.lib;utility.lib;video.lib;video_capture_internal_impl.lib;video_coding.lib;video_coding_utility.lib;video_processing.lib;video_processing_sse2.lib;voice_engine.lib;webrtc_common.lib;webrtc_h264.lib;webrtc_i420.lib;webrtc_opus.lib;webrtc_vp8.lib;webrtc_vp9.lib;winsdk_samples.lib;yasm_utils.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\xiongjs\gerrit\webrtc-update\tutor-webrtc\tutor-webrtc\webrtc-static-lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>advapi32.lib;comdlg32.lib;dbghelp.lib;delayimp.lib;dnsapi.lib;gdi32.lib;kernel32.lib;msimg32.lib;odbc32.lib;odbccp32.lib;ole32.lib;oleaut32.lib;psapi.lib;shell32.lib;shlwapi.lib;user32.lib;usp10.lib;uuid.lib;version.lib;wininet.lib;winmm.lib;winspool.lib;ws2_32.lib;crypt32.lib;iphlpapi.lib;secur32.lib;Strmiids.lib;dmoguids.lib;wmcodecdspuuid.lib;amstrmid.lib;msdmo.lib;video_capture_module.lib;ana_config_proto.lib;ana_debug_dump_proto.lib;audio.lib;audio_coder.lib;audio_coding.lib;audio_conference_mixer.lib;audio_decoder_interface.lib;audio_device.lib;audio_encoder_interface.lib;audio_format.lib;audio_format_conversion.lib;audio_frame_manipulator.lib;audio_frame_operations.lib;audio_mixer_impl.lib;audio_network_adaptor.lib;audio_processing.lib;audio_processing_sse2.lib;audioproc_debug_proto.lib;bitrate_controller.lib;boringssl.dll.lib;boringssl_asm.lib;builtin_audio_decoder_factory.lib;call.lib;cng.lib;command_line_parser.lib;common_audio.lib;common_audio_sse2.lib;common_video.lib;congestion_controller.lib;dl.lib;expat.lib;field_trial_default.lib;file_player.lib;file_recorder.lib;g711.lib;g722.lib;ilbc.lib;isac.lib;isac_c.lib;isac_common.lib;isac_fix.lib;level_indicator.lib;libjingle_peerconnection.lib;libjingle_peerconnection_api.lib;libjpeg.lib;libsrtp.lib;libstunprober.lib;libvpx.lib;libvpx_yasm.lib;libyuv.lib;media_file.lib;metrics_default.lib;neteq.lib;opus.lib;pacing.lib;pcm16b.lib;protobuf_full.lib;protobuf_lite.dll.lib;protoc_lib.lib;red.lib;remote_bitrate_estimator.lib;rent_a_codec.lib;rtc_base.lib;rtc_base_approved.lib;rtc_event_log_impl.lib;rtc_event_log_proto.lib;rtc_media.lib;rtc_media_base.lib;rtc_numerics.lib;rtc_p2p.lib;rtc_pc.lib;rtc_stats.lib;rtc_task_queue.lib;rtp_rtcp.lib;simd.lib;simd_asm.lib;system_wrappers.lib;usrsctp.lib;utility.lib;video.lib;video_capture_internal_impl.lib;video_coding.lib;video_coding_utility.lib;video_processing.lib;video_processing_sse2.lib;voice_engine.lib;webrtc_common.lib;webrtc_h264.lib;webrtc_i420.lib;webrtc_opus.lib;webrtc_vp8.lib;webrtc_vp9.lib;winsdk_samples.lib;yasm_utils.lib;i420_buffer.obj;video_frame.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -151,6 +151,10 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="webrtc-wrapper\video_capture.h" />
+    <ClInclude Include="webrtc-wrapper\enginewrapper.h" />
+    <ClInclude Include="webrtc-wrapper\video_render.h" />
     <ClInclude Include="Win32Project.h" />
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +164,10 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="utils.cpp" />
+    <ClCompile Include="webrtc-wrapper\video_capture.cpp" />
+    <ClCompile Include="webrtc-wrapper\enginewrapper.cpp" />
+    <ClCompile Include="webrtc-wrapper\video_render.cpp" />
     <ClCompile Include="Win32Project.cpp" />
   </ItemGroup>
   <ItemGroup>
