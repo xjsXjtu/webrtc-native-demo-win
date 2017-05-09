@@ -4,6 +4,9 @@
 #include "stdafx.h"
 #include "Win32Project.h"
 
+#include "webrtc/system_wrappers/include/trace.h"
+#include "webrtc/common_types.h"
+
 #define MAX_LOADSTRING 100
 
 // Global Variables:
@@ -31,6 +34,11 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
     LoadStringW(hInstance, IDC_WIN32PROJECT, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
+
+	webrtc::Trace::CreateTrace();
+	webrtc::Trace::SetTraceFile("webrtc_trace.log", true);
+	webrtc::Trace::set_level_filter(webrtc::kTraceDebug);
+	webrtc::WEBRTC_TRACE(webrtc::kTraceDebug, webrtc::kTraceUtility, 0, "Hello WebRTC");
 
     // Perform application initialization:
     if (!InitInstance (hInstance, nCmdShow))
