@@ -35,7 +35,7 @@ class UnixFilesystem : public FilesystemInterface {
 #endif
 
   // Opens a file. Returns an open StreamInterface if function succeeds.
-  // Otherwise, returns NULL.
+  // Otherwise, returns null.
   FileStream* OpenFile(const Pathname& filename,
                        const std::string& mode) override;
 
@@ -61,11 +61,6 @@ class UnixFilesystem : public FilesystemInterface {
   // file or directory, which will be moved recursively.
   // Returns true if function succeeds.
   bool MoveFile(const Pathname& old_path, const Pathname& new_path) override;
-
-  // This copies a file from old_path to _new_path where "file" can be a plain
-  // file or directory, which will be copied recursively.
-  // Returns true if function succeeds
-  bool CopyFile(const Pathname& old_path, const Pathname& new_path) override;
 
   // Returns true if a pathname is a directory
   bool IsFolder(const Pathname& pathname) override;
@@ -94,12 +89,8 @@ class UnixFilesystem : public FilesystemInterface {
                    FileTimeType which,
                    time_t* time) override;
 
-  bool GetAppDataFolder(Pathname* path, bool per_user) override;
-
   // Get a temporary folder that is unique to the current user and application.
   bool GetAppTempFolder(Pathname* path) override;
-
-  bool GetDiskFreeSpace(const Pathname& path, int64_t* freebytes) override;
 
  private:
 #if defined(WEBRTC_ANDROID) || defined(WEBRTC_MAC)

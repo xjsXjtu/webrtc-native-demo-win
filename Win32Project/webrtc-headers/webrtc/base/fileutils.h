@@ -85,7 +85,7 @@ class FilesystemInterface {
   virtual DirectoryIterator* IterateDirectory();
 
   // Opens a file. Returns an open StreamInterface if function succeeds.
-  // Otherwise, returns NULL.
+  // Otherwise, returns null.
   // TODO: Add an error param to indicate failure reason, similar to
   // FileStream::Open
   virtual FileStream *OpenFile(const Pathname &filename,
@@ -118,14 +118,7 @@ class FilesystemInterface {
   // This moves a file from old_path to new_path, where "old_path" is a
   // plain file. This DCHECKs and returns false if old_path points to a
   // directory, and returns true if the function succeeds.
-  // If the new path is on a different volume than the old path, this function
-  // will attempt to copy and, if that succeeds, delete the old path.
   virtual bool MoveFile(const Pathname &old_path, const Pathname &new_path) = 0;
-
-  // This copies a file from old_path to new_path. This method DCHECKs and
-  // returns false if old_path is a folder, and returns true if the copy
-  // succeeds.
-  virtual bool CopyFile(const Pathname &old_path, const Pathname &new_path) = 0;
 
   // Returns true if pathname refers to a directory
   virtual bool IsFolder(const Pathname& pathname) = 0;
@@ -155,18 +148,11 @@ class FilesystemInterface {
   virtual bool GetFileTime(const Pathname& path, FileTimeType which,
                            time_t* time) = 0;
 
-  // Get a folder that is unique to the current application, which is suitable
-  // for sharing data between executions of the app.  If the per_user arg is
-  // true, the folder is also specific to the current user.
-  virtual bool GetAppDataFolder(Pathname* path, bool per_user) = 0;
-
   // Get a temporary folder that is unique to the current user and application.
   // TODO: Re-evaluate the goals of this function.  We probably just need any
   // directory that won't collide with another existing directory, and which
   // will be cleaned up when the program exits.
   virtual bool GetAppTempFolder(Pathname* path) = 0;
-
-  virtual bool GetDiskFreeSpace(const Pathname& path, int64_t* freebytes) = 0;
 
   // Note: These might go into some shared config section later, but they're
   // used by some methods in this interface, so we're leaving them here for now.
@@ -237,10 +223,6 @@ class Filesystem {
     return EnsureDefaultFilesystem()->MoveFile(old_path, new_path);
   }
 
-  static bool CopyFile(const Pathname &old_path, const Pathname &new_path) {
-    return EnsureDefaultFilesystem()->CopyFile(old_path, new_path);
-  }
-
   static bool IsFolder(const Pathname& pathname) {
     return EnsureDefaultFilesystem()->IsFolder(pathname);
   }
@@ -276,16 +258,8 @@ class Filesystem {
     return EnsureDefaultFilesystem()->GetFileTime(path, which, time);
   }
 
-  static bool GetAppDataFolder(Pathname* path, bool per_user) {
-    return EnsureDefaultFilesystem()->GetAppDataFolder(path, per_user);
-  }
-
   static bool GetAppTempFolder(Pathname* path) {
     return EnsureDefaultFilesystem()->GetAppTempFolder(path);
-  }
-
-  static bool GetDiskFreeSpace(const Pathname& path, int64_t* freebytes) {
-    return EnsureDefaultFilesystem()->GetDiskFreeSpace(path, freebytes);
   }
 
   static void SetOrganizationName(const std::string& organization) {
@@ -309,19 +283,6 @@ class Filesystem {
 
   static FilesystemInterface *EnsureDefaultFilesystem();
   RTC_DISALLOW_IMPLICIT_CONSTRUCTORS(Filesystem);
-};
-
-class FilesystemScope{
- public:
-  explicit FilesystemScope(FilesystemInterface *new_fs) {
-    old_fs_ = Filesystem::swap_default_filesystem(new_fs);
-  }
-  ~FilesystemScope() {
-    Filesystem::set_default_filesystem(old_fs_);
-  }
- private:
-  FilesystemInterface* old_fs_;
-  RTC_DISALLOW_IMPLICIT_CONSTRUCTORS(FilesystemScope);
 };
 
 }  // namespace rtc

@@ -26,7 +26,7 @@ VideoCapture* VideoCapture::Create() {
 	cricket::WebRtcVideoDeviceCapturerFactory factory;
 	cricket::VideoCapturer* capturer = nullptr;
 	for (const auto& name : device_names) {
-		capturer = factory.Create(cricket::Device(name, 0));
+		capturer = factory.Create(cricket::Device(name, 0)).release();
 		if (capturer) {
 			break;
 		}

@@ -9,3 +9,15 @@ There are two native demo in the WebRTC source code: peerconnection_client for W
 But it's not simple enough to show how to use WebRTC video/audio engine API, because both demo set up based on libjingle_peerconnection API, not rtc_media.
 Take peerconnection_client as example:
 ![webrtc-projects-dependency](/webrtc-projects-dependency.png)
+
+## Dev Status
+
+WebRTC M59 commit id: 61fe801ad874104a2d461083f53caee4c19c51b6
+
+| Plan          | Status |
+| Video capture | done   |
+| video render  | done   |
+| video codec   |        |
+| udp transport |        |
+| audio         |        |
+
