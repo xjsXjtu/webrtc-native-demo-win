@@ -1,3 +1,6 @@
+# update2019
+As time passes, I changed my mind. I would suggest people integrate WebRTC based on the PeerConnection API, not the rtc_media API. Because rtc_media API is not stable, which means it maybe removed someday. When you upgrade WebRTC, you may have to change lots of integration code.
+
 # webrtc-native-demo-win
 
 WebRTC native demo on Windows without signaling, just showing how to make use of webrtc video/audio engine.
